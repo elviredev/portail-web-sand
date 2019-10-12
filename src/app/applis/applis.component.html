@@ -1,0 +1,11 @@
+<div class="container mt-2">
+    <ul class="list-group" *ngIf="appliList">
+        <!-- si appli courante est undefined et son lien égal au lien self de la liste
+        j'applique la classe active -->
+        <li [ngClass]="currentAppli && currentAppli._links.self == appli._links.self ? 'active':''" 
+        class="list-group-item" 
+        *ngFor="let appli of appliList._embedded.coachedApplis">
+            <a class="pointerClick" (click)="onGetContentsAppli(appli)">{{ appli.appliName }}</a>
+        </li>
+    </ul> 
+</div>
