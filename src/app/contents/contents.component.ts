@@ -26,6 +26,7 @@ export class ContentsComponent implements OnInit {
    }
 
   ngOnInit() {
+    
   }
 
   // récupère contenus via l'url décodée en Base 64 et via le Service
