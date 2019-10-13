@@ -6,6 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class AuthenticationService {
+ 
   BASE_URL_LOG: string = 'http://localhost:8080';
   jwt: string;
   username: string;
@@ -27,6 +28,7 @@ export class AuthenticationService {
     this.parseJWT();
   }
 
+  // a partir de jwt je récupère username et roles
   // library => npm install @auth0/angular-jwt
   parseJWT(){
     const jwtHelper = new JwtHelperService();
@@ -48,6 +50,25 @@ export class AuthenticationService {
   // utilisateur est authentifié si un rôle est définit => admin ou user
   isAuthenticated(){
     return this.roles && (this.isAdmin() || this.isUser());
+  }
+
+  // récupère le token au demarrage de la page principale si authentifié => plus besoin de s'authentifier à chaque fois 
+  loadToken() {
+   this.jwt = localStorage.getItem('token');
+   if(this.jwt != null) {
+     this.parseJWT();
+   }
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    this.initParams();
+  }
+  
+  initParams(){
+    this.jwt = undefined;
+    this.username = undefined;
+    this.roles = undefined;
   }
 
 }
