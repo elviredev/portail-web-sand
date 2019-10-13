@@ -9,32 +9,36 @@
         <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Contact <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/contact">Contact <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/applis">Applis <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown" *ngIf="isAuthenticated() && isAdmin()">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Admin
         </a>       
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Gestion des applications</a>
-          <a class="dropdown-item" href="#">Gestion des contenus</a>
-          <a class="dropdown-item" href="#">Gestion des utilisateurs</a>
+          <a class="dropdown-item" routerLink="/adminApplis">Gestion des applications</a>
+          <a class="dropdown-item" routerLink="/adminContents">Gestion des contenus</a>
+          <a class="dropdown-item" routerLink="/adminUsers">Gestion des utilisateurs</a>
         </div>       
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/login">Sign In</a>
+        <a *ngIf="!isAuthenticated()" class="nav-link" routerLink="/login">Sign In</a>
+        <a *ngIf="isAuthenticated()" (click)="logOut()" class="nav-link" routerLink="/">Sign Out</a>
       </li>
     </ul>
   </div>
 </nav>
-
-<div class="row">
+<router-outlet></router-outlet>
+<!-- <div class="row">
   <div class="col-md-3">
     <app-applis></app-applis>
   </div>
   <div class="col-md-9">
     <router-outlet></router-outlet>
   </div>
-</div>
+</div> -->
