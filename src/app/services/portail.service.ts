@@ -7,12 +7,12 @@ import { AuthenticationService } from './authentication.service';
 })
 export class PortailService {
   
-  public BASE_URL: string = 'http://localhost:8087';
+  public BASE_URL: string = 'http://localhost:8080';
 
   constructor(private httpClient: HttpClient, private authService: AuthenticationService) { }
 
   getAllApplis() {
-    return this.httpClient.get(`${this.BASE_URL}/coachedApplis`);
+    return this.httpClient.get(`${this.BASE_URL}/applis`);
   }
 
   // récupérer n'importe quelle ressource par son url avec spring data rest

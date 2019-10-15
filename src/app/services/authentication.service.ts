@@ -7,7 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthenticationService {
  
-  BASE_URL_LOG: string = 'http://localhost:8080';
+  BASE_URL: string = 'http://localhost:8080';
   jwt: string;
   username: string;
   roles: Array<string>;
@@ -16,7 +16,7 @@ export class AuthenticationService {
 
   login(data){
     // récupère l'entête Authorization grace à l'option {observe: response} => on ne convertit plus en json, on veut toute la réponse http et après on récupère ce qu'on veut dans la réponse
-    return this.httpClient.post(`${this.BASE_URL_LOG}/login`, data, { observe: 'response' });
+    return this.httpClient.post(`${this.BASE_URL}/login`, data, { observe: 'response' });
   }
 
   saveToken(jwt: string) {

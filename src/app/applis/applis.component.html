@@ -5,7 +5,7 @@
             j'applique la classe active -->
             <li [ngClass]="currentAppli && currentAppli._links.self == appli._links.self ? 'active':''" 
             class="list-group-item pointerClick" 
-            *ngFor="let appli of appliList._embedded.coachedApplis"
+            *ngFor="let appli of appliList._embedded.applis"
             (click)="onGetContentsAppli(appli)">{{ appli.appliName }}
             </li>
         </ul> 

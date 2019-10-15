@@ -48,7 +48,7 @@ export class AdminApplisComponent implements OnInit {
 
   onSaveAppli(data){
     console.log(data);
-    let url = this.portailService.BASE_URL + '/coachedApplis';
+    let url = this.portailService.BASE_URL + '/applis';
     this.portailService.postRessource(url, data)
         .subscribe(data => {
           this.mode = 'list';

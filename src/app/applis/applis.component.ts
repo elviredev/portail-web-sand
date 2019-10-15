@@ -26,8 +26,8 @@ export class ApplisComponent implements OnInit {
   // récupère les contenus d'une appli avec clic sur l'appli et renvoi vers page "contents" avec url encodée en base 64
   onGetContentsAppli(appli){
     this.currentAppli = appli;
-    console.log('appli : ' + appli._links.contentApplis.href);
-    let urlContents = appli._links.contentApplis.href;
+    console.log('appli : ' + appli._links.contents.href);
+    let urlContents = appli._links.contents.href;
     this.router.navigateByUrl('/contents/' + btoa(urlContents)); // btoa() => encoder une url en string base 64
   
     

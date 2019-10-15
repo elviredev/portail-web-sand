@@ -32,7 +32,7 @@
                  <tr>
                    <th>Name</th>
                  </tr>
-                 <tr *ngFor="let appli of appliList._embedded.coachedApplis">
+                 <tr *ngFor="let appli of appliList._embedded.applis">
                    <td>{{ appli.appliName }}</td>
                    <td>
                       <a class="btn btn-outline-danger" (click)="onDeleteAppli(appli)">
