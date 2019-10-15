@@ -14,22 +14,22 @@ export class AppComponent implements OnInit{
   constructor(private authService: AuthenticationService){}
 
   ngOnInit(): void {
-    this.authService.loadToken();
+    //this.authService.loadToken();
   }
 
-  isAdmin(){
-    return this.authService.isAdmin();
-  }
+  // isAdmin(){
+  //   return this.authService.isAdmin();
+  // }
 
-  isUser(){
-    return this.authService.isUser();
-  }
+  // isUser(){
+  //   return this.authService.isUser();
+  // }
 
-  isAuthenticated(){
-    return this.authService.isAuthenticated();
-  }
+  // isAuthenticated(){
+  //   return this.authService.isAuthenticated();
+  // }
 
-  logOut(){
-    return this.authService.logOut();
-  }
+  // logOut(){
+  //   return this.authService.logOut();
+  // }
 }
