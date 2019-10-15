@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
+    this.authService.loadToken();
   }
   onLogin(data){
     console.log(data);
@@ -33,6 +34,14 @@ export class LoginComponent implements OnInit {
 
   isUser(){
     return this.authService.isUser();
+  }
+
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
+  }
+
+  logOut(){
+    return this.authService.logOut();
   }
 
 }
