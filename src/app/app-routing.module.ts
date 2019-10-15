@@ -7,8 +7,10 @@ import { AdminContentsComponent } from './admin/admin-contents/admin-contents.co
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { ContactComponent } from './contact/contact.component';
 import { ApplisComponent } from './applis/applis.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'applis', component: ApplisComponent },
   { path: 'contents', component: ContentsComponent },
   { path: 'contents/:urlContents', component: ContentsComponent },
