@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 import { ApplisComponent } from './applis/applis.component';
@@ -14,6 +16,7 @@ import { AdminApplisComponent } from './admin/admin-applis/admin-applis.componen
 import { AdminContentsComponent } from './admin/admin-contents/admin-contents.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +27,17 @@ import { ContactComponent } from './contact/contact.component';
     AdminApplisComponent,
     AdminContentsComponent,
     AdminUsersComponent,
-    ContactComponent
+    ContactComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
